@@ -1,0 +1,83 @@
+import java.util.* ;
+
+class weighed_maze
+{
+	int maze[] ;
+	public static void main()
+	{
+		System.out.println("Welcome to our maze") ;   //taking input and prompts
+		System.out.println("Here you'll get to play a game") ;
+		System.out.println("Enter the size of the maaze you want") ;
+		Scanner sc = new Scanner(System.in) ;
+		int n = sc.nextInt() ;
+		
+		maze = new int[n] ; //creating and initialising maze
+		for(int i = 0 ; i < n ; i++ )
+		{
+			for(int j = 0 ; j < n ; j++ )
+			{
+				maze[i][j] = 0 ; //0 means unfilled
+			}
+		}
+		System.out.println("Enter the coordinates of the obstacles one by one, as in \"1 2\" .Enter \"-1 -1\" to stop. Indices run from 0 to " + (n-1) ) ;
+		System.out.println("\"0, 0\" and \"" + (n-1) + " " + (n-1) + "\" can't be obstacles, as these are the starting and ending points respectively.") ;
+		int i = sc.nextInt() ;
+		int j = sc.nextInt() ;
+		
+		while(i!=-1&&j!=-1)
+		{
+			maze[i][j] = -1 ; // -1 means obstacle
+			i = sc.nextInt() ;
+			j = sc.nextInt() ;
+		}
+		
+		System.out.println("Now enter the number of pokeballs at the non-obstacle points.") ;
+		System.out.println("For example, \"0 1 5 \"  means there are 5 pokeballs at \(0, 1\).") ;
+		System.out.println("By default, there are 0 poke balls at each point.") ;
+		System.out.println("As earlier, enter \"-1 -1\" to stop") ;
+		
+		i = sc.nextInt() ;
+		j = sc.nextInt() ;
+		int balls = sc.nextInt() ;
+		while(i!=-1 && j!=-1)
+		{
+			maze[i][j] = balls ;
+			i = sc.nextInt() ;
+			j = sc.nextInt() ;
+			int balls = sc.nextInt() ;
+		}
+			
+		System.out.println("Now finding the path which maximises number of pokeballs found.") ;
+		findPath(0,0,0) ;
+		displayPath() ;
+		
+		System.out.println("Thanks for using this.") ;
+	}
+	
+	public static void findPath(int i, int j, int count) ;
+	{
+		if(maze[i][j]==-2||maze[i][j]==-1)
+			return ;
+		if(
+		int store = maze[i][j] ;
+		count+= store ;
+		maze[i][j] = -2 ;
+		if(i < maze.length -1 )
+		{
+			maze(i+1, j, count) ;
+
+		}
+		if(j < maze.length - 1 ) 
+		{
+		
+		
+		
+	
+	
+	
+}
+
+		
+			
+			
+		
